@@ -1,4 +1,4 @@
-"""Multipath TCP experiment: This profile instantiates a topology with two links between a server and client, and also sets up the routing configuration necessary to run MPTCP over this link."""
+"""Multipath TCP experiment: This profile instantiates a topology in CloudLab with two links between a server and client, and also sets up the routing configuration necessary to run MPTCP over this link."""
 
 
 # Import the Portal object.
