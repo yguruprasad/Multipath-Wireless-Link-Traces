@@ -14,6 +14,7 @@
 
 ## Trace visualization and statistics
 
-![image](https://user-images.githubusercontent.com/2316553/211050968-094fadfd-cad8-472e-b58e-cb1fae98cda1.png)
+![alltracesvisualization](https://user-images.githubusercontent.com/36745106/213467672-160afcc8-ee57-486b-9d93-482fe070591f.png)
+
 
 A Python notebook with summary statistics of each trace pair is available at the following link: https://colab.research.google.com/drive/14-OClGxWto5T_hfrjxkzlxvn1PXcTFNL
