@@ -7,7 +7,7 @@ sudo ifconfig $ifacetoC down; sudo ifconfig $ifacetoC up
 sudo ifconfig $ifacetoS down; sudo ifconfig $ifacetoS up
 
 # add the new routes manually 
-sudo route add -net 192.168.30.0/24 gw 192.168.5.1 
+sudo route add -net 192.168.50.0/24 gw 192.168.5.1 
 
 # Set bottleneck capacity and buffer size at the router
 sudo tc qdisc del dev $ifacetoS root # don’t worry if you get RTNETLINK  error
