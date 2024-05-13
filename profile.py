@@ -25,8 +25,8 @@ iface12 = node_client.addInterface('interface-13', pg.IPv4Address('192.168.30.2'
 # Node emulator3
 node_emulator3 = request.RawPC('emulator3')
 node_emulator3.addService(pg.Execute('/bin/sh','/bin/bash /local/repository/CloudLab/emulator3.sh'))
-iface13 = node_emulator2.addInterface('interface-14', pg.IPv4Address('192.168.30.1','255.255.255.0'))
-iface14 = node_emulator2.addInterface('interface-15', pg.IPv4Address('192.168.3.1','255.255.255.0'))
+iface13 = node_emulator3.addInterface('interface-14', pg.IPv4Address('192.168.30.1','255.255.255.0'))
+iface14 = node_emulator3.addInterface('interface-15', pg.IPv4Address('192.168.3.1','255.255.255.0'))
 
 # Node emulator2
 node_emulator2 = request.RawPC('emulator2')
