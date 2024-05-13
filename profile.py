@@ -20,6 +20,7 @@ node_client.disk_image = 'urn:publicid:IDN+wisc.cloudlab.us+image+cloudlab-PG0:m
 node_client.addService(pg.Execute('/bin/sh','/usr/bin/sudo /bin/bash /local/repository/CloudLab/client.sh'))
 iface0 = node_client.addInterface('interface-0', pg.IPv4Address('192.168.10.2','255.255.255.0'))
 iface1 = node_client.addInterface('interface-4', pg.IPv4Address('192.168.20.2','255.255.255.0'))
+iface12 = node_client.addInterface('interface-4', pg.IPv4Address('192.168.30.2','255.255.255.0'))
 
 # Node emulator2
 node_emulator2 = request.RawPC('emulator2')
