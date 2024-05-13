@@ -16,7 +16,7 @@ sudo sysctl -w net.ipv4.tcp_congestion_control=balia
 ######################################################
 iface1=$(ifconfig | grep -B1 "inet 192.168.3.1" | head -n1 | cut -f1 -d:)
 iface2=$(ifconfig | grep -B1 "inet 192.168.4.1" | head -n1 | cut -f1 -d:)
-iface17=$(ifconfig | grep -B1 "inet 192.168.5.1" | head -n1 | cut -f1 -d:)
+iface17=$(ifconfig | grep -B1 "inet 192.168.6.1" | head -n1 | cut -f1 -d:)
 ifaceC=$(ifconfig | grep -B1 "inet " | head -n1 | cut -f1 -d:) 
 
 # bring both interfaces of the client node down and then up
@@ -27,4 +27,4 @@ sudo ifconfig $iface17 down; sudo ifconfig $iface17 up
 # add the new routes manually 
 sudo route add -net 192.168.10.0/24 gw 192.168.3.2 
 sudo route add -net 192.168.20.0/24 gw 192.168.4.2
-sudo route add -net 192.168.30.0/24 gw 192.168.5.2
+sudo route add -net 192.168.50.0/24 gw 192.168.6.2
