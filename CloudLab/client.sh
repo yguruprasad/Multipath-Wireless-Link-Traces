@@ -38,7 +38,7 @@ sudo ifconfig $iface12 down; sudo ifconfig $iface12 up
 # add the new routes manually 
 sudo route add -net 192.168.3.0/24 gw 192.168.10.1 
 sudo route add -net 192.168.4.0/24 gw 192.168.20.1
-sudo route add -net 192.168.4.0/24 gw 192.168.30.1
+sudo route add -net 192.168.6.0/24 gw 192.168.30.1
 
 # disable mptcp on control interface and enable in the experiment interfaces
 sudo ip link set dev $ifaceC multipath off 
@@ -55,5 +55,5 @@ sudo ip route add 192.168.20.0/24 dev $iface2 scope link table 2
 sudo ip route add 192.168.30.0/24 dev $iface12 scope link table 3
 sudo ip route add 192.168.3.0/24 via 192.168.10.1 dev $iface1 table 1 
 sudo ip route add 192.168.4.0/24 via 192.168.20.1 dev $iface2 table 2
-sudo ip route add 192.168.4.0/24 via 192.168.30.1 dev $iface12 table 3
+sudo ip route add 192.168.6.0/24 via 192.168.30.1 dev $iface12 table 3
 
