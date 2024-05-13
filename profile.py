@@ -20,13 +20,13 @@ node_client.disk_image = 'urn:publicid:IDN+wisc.cloudlab.us+image+cloudlab-PG0:m
 node_client.addService(pg.Execute('/bin/sh','/usr/bin/sudo /bin/bash /local/repository/CloudLab/client.sh'))
 iface0 = node_client.addInterface('interface-0', pg.IPv4Address('192.168.10.2','255.255.255.0'))
 iface1 = node_client.addInterface('interface-4', pg.IPv4Address('192.168.20.2','255.255.255.0'))
-iface12 = node_client.addInterface('interface-13', pg.IPv4Address('192.168.30.2','255.255.255.0'))
+iface12 = node_client.addInterface('interface-13', pg.IPv4Address('192.168.50.2','255.255.255.0'))
 
 # Node emulator3
 node_emulator3 = request.RawPC('emulator3')
 node_emulator3.addService(pg.Execute('/bin/sh','/bin/bash /local/repository/CloudLab/emulator3.sh'))
-iface13 = node_emulator3.addInterface('interface-14', pg.IPv4Address('192.168.30.1','255.255.255.0'))
-iface14 = node_emulator3.addInterface('interface-15', pg.IPv4Address('192.168.3.1','255.255.255.0'))
+iface13 = node_emulator3.addInterface('interface-14', pg.IPv4Address('192.168.50.1','255.255.255.0'))
+iface14 = node_emulator3.addInterface('interface-15', pg.IPv4Address('192.168.5.1','255.255.255.0'))
 
 # Node emulator2
 node_emulator2 = request.RawPC('emulator2')
@@ -46,7 +46,7 @@ node_server.disk_image = 'urn:publicid:IDN+wisc.cloudlab.us+image+cloudlab-PG0:m
 node_server.addService(pg.Execute('/bin/sh','/usr/bin/sudo /bin/bash /local/repository/CloudLab/server.sh'))
 iface6 = node_server.addInterface('interface-10', pg.IPv4Address('192.168.3.1','255.255.255.0'))
 iface7 = node_server.addInterface('interface-12', pg.IPv4Address('192.168.4.1','255.255.255.0'))
-iface17 = node_server.addInterface('interface-18', pg.IPv4Address('192.168.5.1','255.255.255.0'))
+iface17 = node_server.addInterface('interface-18', pg.IPv4Address('192.168.6.1','255.255.255.0'))
 
 # Node router1
 node_router1 = request.RawPC('router1')
