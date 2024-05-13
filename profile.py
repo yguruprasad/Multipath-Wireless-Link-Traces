@@ -20,7 +20,13 @@ node_client.disk_image = 'urn:publicid:IDN+wisc.cloudlab.us+image+cloudlab-PG0:m
 node_client.addService(pg.Execute('/bin/sh','/usr/bin/sudo /bin/bash /local/repository/CloudLab/client.sh'))
 iface0 = node_client.addInterface('interface-0', pg.IPv4Address('192.168.10.2','255.255.255.0'))
 iface1 = node_client.addInterface('interface-4', pg.IPv4Address('192.168.20.2','255.255.255.0'))
-iface12 = node_client.addInterface('interface-4', pg.IPv4Address('192.168.30.2','255.255.255.0'))
+iface12 = node_client.addInterface('interface-13', pg.IPv4Address('192.168.30.2','255.255.255.0'))
+
+# Node emulator3
+node_emulator3 = request.RawPC('emulator3')
+node_emulator3.addService(pg.Execute('/bin/sh','/bin/bash /local/repository/CloudLab/emulator3.sh'))
+iface13 = node_emulator2.addInterface('interface-14', pg.IPv4Address('192.168.30.1','255.255.255.0'))
+iface14 = node_emulator2.addInterface('interface-15', pg.IPv4Address('192.168.3.1','255.255.255.0'))
 
 # Node emulator2
 node_emulator2 = request.RawPC('emulator2')
@@ -40,6 +46,7 @@ node_server.disk_image = 'urn:publicid:IDN+wisc.cloudlab.us+image+cloudlab-PG0:m
 node_server.addService(pg.Execute('/bin/sh','/usr/bin/sudo /bin/bash /local/repository/CloudLab/server.sh'))
 iface6 = node_server.addInterface('interface-10', pg.IPv4Address('192.168.3.1','255.255.255.0'))
 iface7 = node_server.addInterface('interface-12', pg.IPv4Address('192.168.4.1','255.255.255.0'))
+iface17 = node_server.addInterface('interface-18', pg.IPv4Address('192.168.5.1','255.255.255.0'))
 
 # Node router1
 node_router1 = request.RawPC('router1')
@@ -52,6 +59,12 @@ node_router2 = request.RawPC('router2')
 node_router2.addService(pg.Execute('/bin/sh','/usr/bin/sudo /bin/bash /local/repository/CloudLab/router2.sh'))
 iface10 = node_router2.addInterface('interface-3', pg.IPv4Address('192.168.2.2','255.255.255.0'))
 iface11 = node_router2.addInterface('interface-11', pg.IPv4Address('192.168.4.2','255.255.255.0'))
+
+# Node router3
+node_router3 = request.RawPC('router3')
+node_router3.addService(pg.Execute('/bin/sh','/usr/bin/sudo /bin/bash /local/repository/CloudLab/router3.sh'))
+iface15 = node_router2.addInterface('interface-16', pg.IPv4Address('192.168.5.2','255.255.255.0'))
+iface16 = node_router2.addInterface('interface-17', pg.IPv4Address('192.168.6.2','255.255.255.0'))
 
 # Link link-0
 link_0 = request.Link('link-0')
@@ -84,7 +97,20 @@ link_5 = request.Link('link-5')
 link_5.addInterface(iface11)
 link_5.addInterface(iface7)
 
+# Link link-6
+link_6 = request.Link('link-6')
+link_6.addInterface(iface12)
+link_6.addInterface(iface13)
 
+# Link link-7
+link_7 = request.Link('link-7')
+link_7.addInterface(iface14)
+link_7.addInterface(iface15)
+
+# Link link-8
+link_8 = request.Link('link-5')
+link_8.addInterface(iface16)
+link_8.addInterface(iface17)
 # Print the generated rspec
 pc.printRequestRSpec(request)
 
